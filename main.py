@@ -4,9 +4,12 @@ pygame.init()
 pygame.joystick.init()
 
 joysticks = []
+icon = pygame.image.load("assets/icon.png")
+background = pygame.image.load("assets/controller.png")
+
+pygame.display.set_icon(icon)
 window = pygame.display.set_mode((1280, 720))
 pygame.display.set_caption("Controller Visualiser")
-background = pygame.image.load("assets/controller.png")
 
 while True:
     for event in pygame.event.get():
@@ -38,7 +41,6 @@ while True:
         if joystick.get_button(3): # Button Y
             pygame.draw.circle(window, "#000000", (889, 141), 35)
             print("Y") #Y: 141; X: 888.5
-
             
         if joystick.get_button(4): # Button LB
             print("LB")
@@ -54,13 +56,18 @@ while True:
             pygame.draw.circle(window, "#000000", (710, 206), 20)
             print("Menu")
             
-        if joystick.get_button(8): # Button L3
-            print("L3")
+        # if joystick.get_button(8): # Button L3
+        #     print("L3")
             
-        if joystick.get_button(9): # Button R3
-            print("R3")
+        # if joystick.get_button(9): # Button R3
+        #     print("R3")
         
         if joystick.get_button(10): # Button XBOX
+            pygame.draw.circle(window, "#000000", (640, 108), 32)
             print("XBOX")
+            
+        # L
+        pygame.draw.circle(window, "#000000", (393 + (joystick.get_axis(0) * 25), 206 + (joystick.get_axis(1) * 25)), 40)
+
         
     pygame.display.flip()
