@@ -56,18 +56,25 @@ while True:
             pygame.draw.circle(window, "#000000", (710, 206), 20)
             print("Menu")
             
-        # if joystick.get_button(8): # Button L3
-        #     print("L3")
-            
-        # if joystick.get_button(9): # Button R3
-        #     print("R3")
-        
         if joystick.get_button(10): # Button XBOX
             pygame.draw.circle(window, "#000000", (640, 108), 32)
             print("XBOX")
             
         # L
         pygame.draw.circle(window, "#000000", (393 + (joystick.get_axis(0) * 25), 206 + (joystick.get_axis(1) * 25)), 40)
+        
+        if joystick.get_button(8): # Button L3
+            print("L3")
+        else:
+            pygame.draw.circle(window, "#FFFFFF", (393 + (joystick.get_axis(0) * 25), 206 + (joystick.get_axis(1) * 25)), 33)
+                        
+        # R
+        pygame.draw.circle(window, "#000000", (767 + (joystick.get_axis(2) * 25), 352 + (joystick.get_axis(3) * 25)), 40)
+        
+        if joystick.get_button(9): # Button R3
+            print("R3")
+        else:
+            pygame.draw.circle(window, "#FFFFFF", (767 + (joystick.get_axis(2) * 25), 352 + (joystick.get_axis(3) * 25)), 33)
 
         
     pygame.display.flip()
