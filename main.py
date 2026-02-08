@@ -8,8 +8,6 @@ window = pygame.display.set_mode((1280, 720))
 pygame.display.set_caption("Controller Visualiser")
 background = pygame.image.load("assets/controller.png")
 
-window.fill("#FFFFFF")
-
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -49,9 +47,11 @@ while True:
             print("RB")
             
         if joystick.get_button(6): # Button View
+            pygame.draw.circle(window, "#000000", (569, 206), 20)
             print("View")
             
         if joystick.get_button(7): # Button Menu
+            pygame.draw.circle(window, "#000000", (710, 206), 20)
             print("Menu")
             
         if joystick.get_button(8): # Button L3
