@@ -9,7 +9,7 @@ background = pygame.image.load("assets/controller.png")
 
 pygame.display.set_icon(icon)
 window = pygame.display.set_mode((1280, 720))
-pygame.display.set_caption("Controller Visualiser")
+pygame.display.set_caption("Controller Indicator")
 
 while True:
     for event in pygame.event.get():
