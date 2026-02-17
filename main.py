@@ -23,12 +23,12 @@ while True:
             joysticks.append(joy)
     
     for joystick in joysticks:
-        time = pygame.time.get_ticks()
         window.blit(background, (0, 0))
         
         if joystick.get_button(0): # Button A
             pygame.draw.circle(window, "#000000", (889, 274), 35)
             print("A")
+            print(joystick.get_numbuttons())
             
         if joystick.get_button(1): # Button B
             pygame.draw.circle(window, "#000000", (953, 207), 35)
@@ -60,6 +60,9 @@ while True:
             pygame.draw.circle(window, "#000000", (640, 108), 32)
             print("XBOX")
             
+        if joystick.get_button(11): #Button Share
+            print("Screen")
+            
         # L
         pygame.draw.circle(window, "#000000", (393 + (joystick.get_axis(0) * 25), 206 + (joystick.get_axis(1) * 25)), 40)
         
@@ -75,6 +78,8 @@ while True:
             print("R3")
         else:
             pygame.draw.circle(window, "#FFFFFF", (767 + (joystick.get_axis(2) * 25), 352 + (joystick.get_axis(3) * 25)), 33)
+
+        
 
         
     pygame.display.flip()
