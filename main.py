@@ -82,4 +82,7 @@ while True:
         #LT
         if joystick.get_axis(4) != -1: pygame.draw.line(window, "#000000", (100, 22), (100, 22 + ((joystick.get_axis(4) + 1) * 60)), 50)
         
+        #RT
+        if joystick.get_axis(5) != -1: pygame.draw.line(window, "#000000", (1280 - 100, 22), (1280 - 100, 22 + ((joystick.get_axis(5) + 1) * 60)), 50)
+        
     pygame.display.flip()
