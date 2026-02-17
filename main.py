@@ -63,7 +63,7 @@ while True:
         if joystick.get_button(11): #Button Share
             print("Screen")
             
-        # L
+        # LS
         pygame.draw.circle(window, "#000000", (393 + (joystick.get_axis(0) * 25), 206 + (joystick.get_axis(1) * 25)), 40)
         
         if joystick.get_button(8): # Button L3
@@ -71,7 +71,7 @@ while True:
         else:
             pygame.draw.circle(window, "#FFFFFF", (393 + (joystick.get_axis(0) * 25), 206 + (joystick.get_axis(1) * 25)), 33)
                         
-        # R
+        # RS
         pygame.draw.circle(window, "#000000", (767 + (joystick.get_axis(2) * 25), 352 + (joystick.get_axis(3) * 25)), 40)
         
         if joystick.get_button(9): # Button R3
@@ -79,7 +79,7 @@ while True:
         else:
             pygame.draw.circle(window, "#FFFFFF", (767 + (joystick.get_axis(2) * 25), 352 + (joystick.get_axis(3) * 25)), 33)
 
-        
-
+        #LT
+        if joystick.get_axis(4) != -1: pygame.draw.line(window, "#000000", (100, 22), (100, 22 + ((joystick.get_axis(4) + 1) * 60)), 50)
         
     pygame.display.flip()
