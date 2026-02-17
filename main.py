@@ -11,6 +11,12 @@ pygame.display.set_icon(icon)
 window = pygame.display.set_mode((1280, 720))
 pygame.display.set_caption("Controller Indicator")
 
+def log_button(button: str):
+    print(f"Button: {button}")
+    
+def log_axis(axis: str, axis_value: float):
+    print(f"Asix: {axis}; Value: {axis_value}")
+
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -27,47 +33,46 @@ while True:
         
         if joystick.get_button(0): # Button A
             pygame.draw.circle(window, "#000000", (889, 274), 35)
-            print("A")
-            print(joystick.get_numbuttons())
+            log_button("A")
             
         if joystick.get_button(1): # Button B
             pygame.draw.circle(window, "#000000", (953, 207), 35)
-            print("B")
+            log_button("B")
         
         if joystick.get_button(2): # Button X
             pygame.draw.circle(window, "#000000", (823, 207), 35)
-            print("X")
+            log_button("X")
             
         if joystick.get_button(3): # Button Y
             pygame.draw.circle(window, "#000000", (889, 141), 35)
-            print("Y") #Y: 141; X: 888.5
+            log_button("Y")
             
         if joystick.get_button(4): # Button LB
-            print("LB")
+            log_button("LB")
 
         if joystick.get_button(5): # Button RB
-            print("RB")
+            log_button("RB")
             
         if joystick.get_button(6): # Button View
             pygame.draw.circle(window, "#000000", (569, 206), 20)
-            print("View")
+            log_button("View")
             
         if joystick.get_button(7): # Button Menu
             pygame.draw.circle(window, "#000000", (710, 206), 20)
-            print("Menu")
+            log_button("Menu")
             
         if joystick.get_button(10): # Button XBOX
             pygame.draw.circle(window, "#000000", (640, 108), 32)
-            print("XBOX")
+            log_button("XBOX")
             
         if joystick.get_button(11): #Button Share
-            print("Screen")
+            log_button("Screen")
             
         # LS
         pygame.draw.circle(window, "#000000", (393 + (joystick.get_axis(0) * 25), 206 + (joystick.get_axis(1) * 25)), 40)
         
         if joystick.get_button(8): # Button L3
-            print("L3")
+            log_button("L3")
         else:
             pygame.draw.circle(window, "#FFFFFF", (393 + (joystick.get_axis(0) * 25), 206 + (joystick.get_axis(1) * 25)), 33)
                         
@@ -75,7 +80,7 @@ while True:
         pygame.draw.circle(window, "#000000", (767 + (joystick.get_axis(2) * 25), 352 + (joystick.get_axis(3) * 25)), 40)
         
         if joystick.get_button(9): # Button R3
-            print("R3")
+            log_button("R3")
         else:
             pygame.draw.circle(window, "#FFFFFF", (767 + (joystick.get_axis(2) * 25), 352 + (joystick.get_axis(3) * 25)), 33)
 
